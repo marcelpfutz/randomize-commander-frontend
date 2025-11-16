@@ -41,3 +41,6 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+randomize-commander.code-workspace
+src/environments/environment.production.ts
+src/environments/environment.local.ts
