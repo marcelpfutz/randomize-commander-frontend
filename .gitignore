@@ -45,3 +45,4 @@ randomize-commander.code-workspace
 src/environments/environment.production.ts
 src/environments/environment.local.ts
 CHAT_HISTORY.md
+GUIA_IMPLEMENTACAO.md
