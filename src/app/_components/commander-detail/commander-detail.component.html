@@ -1,7 +1,6 @@
 <div class="min-h-screen bg-gradient-to-br from-dark-bg via-dark-purple/10 to-dark-bg py-8 px-4 sm:px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
     
-    <!-- Back Button -->
     <button 
       (click)="onBack()"
       class="mb-6 inline-flex items-center text-gray-400 hover:text-primary-purple transition-colors duration-200">
@@ -11,7 +10,6 @@
       Voltar
     </button>
 
-    <!-- Header -->
     <div class="text-center mb-8 sm:mb-12">
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary-purple via-light-purple to-accent-purple bg-clip-text text-transparent mb-4 bg-[length:200%_200%] animate-gradient">
         {{ commanderInfo?.title || 'Randomize Commander' }}
@@ -21,24 +19,18 @@
     <!-- Loading State -->
     <div *ngIf="isLoading" class="flex flex-col items-center justify-center py-20">
       <div class="relative">
-        <!-- Outer ring -->
         <div class="absolute inset-0 border-4 border-primary-purple/20 rounded-full w-24 h-24"></div>
-        <!-- Spinning ring -->
         <div class="border-4 border-transparent border-t-primary-purple border-r-light-purple rounded-full w-24 h-24 animate-spin"></div>
-        <!-- Inner glow -->
         <div class="absolute inset-3 bg-gradient-to-r from-primary-purple to-dark-purple rounded-full blur-xl opacity-50 animate-pulse"></div>
       </div>
       <p class="mt-8 text-xl text-gray-400 animate-pulse">Carregando informações...</p>
-      <p class="mt-2 text-sm text-gray-500">Buscando o comandante perfeito para você</p>
+      <p class="mt-2 text-sm text-gray-500">Buscando seu próximo comandante</p>
     </div>
 
-    <!-- Main Card Container -->
     <div *ngIf="!isLoading && commanderInfo" class="bg-dark-card border border-dark-border rounded-2xl shadow-2xl overflow-hidden backdrop-blur-sm bg-opacity-90 animate-fade-in">
       
-      <!-- Content Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-6 sm:p-8 lg:p-10">
         
-        <!-- Image Section -->
         <div class="flex items-center justify-center">
           <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-primary-purple to-dark-purple rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
@@ -52,7 +44,6 @@
           </div>
         </div>
 
-        <!-- Description Section -->
         <div class="flex flex-col justify-center space-y-6">
           <div class="bg-dark-bg/50 rounded-xl p-6 border border-primary-purple/20">
             <h2 class="text-2xl font-semibold text-light-purple mb-4 flex items-center">
@@ -66,7 +57,6 @@
             </p>
           </div>
 
-          <!-- Action Button -->
           <button 
             (click)="onRandomize()"
             [disabled]="isLoading"
@@ -75,19 +65,18 @@
               <svg class="w-5 h-5 mr-2" [class.animate-spin]="isLoading" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
               </svg>
-              {{ isLoading ? 'Randomizando...' : 'Randomizar Novo Commander' }}
+              {{ isLoading ? 'Sorteando...' : 'Sortear Novo Comandante' }}
             </span>
           </button>
         </div>
       </div>
 
-      <!-- Tags Section -->
       <div *ngIf="commanderInfo.tags && commanderInfo.tags.length > 0" class="border-t border-dark-border bg-dark-bg/30 p-6 sm:p-8">
         <h2 class="text-2xl font-semibold text-light-purple mb-6 flex items-center">
           <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
           </svg>
-          Tags e Recursos
+          Temas:
         </h2>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -111,7 +100,6 @@
       </div>
     </div>
 
-    <!-- Footer -->
     <div class="text-center mt-8 text-gray-500 text-sm">
       <p>Dados fornecidos por EDHREC e Scryfall</p>
     </div>
