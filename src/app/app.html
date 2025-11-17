@@ -1,3 +1,14 @@
 <div>
-  <h1>Teste</h1>
+  <h1>{{ commanderInfo.title }}</h1>
+  <div>
+    <img [src]="commanderInfo.image" alt="Commander Image" />
+  </div>
+  <div>
+    <p>{{ commanderInfo.description }}</p>
+  </div>
+  <div *ngFor="let tag of commanderInfo.tags">
+    <h3>{{ tag.label }}</h3>
+    <a href="{{ tag.link }}">{{ tag.link }}</a>
+
+  </div>
 </div>

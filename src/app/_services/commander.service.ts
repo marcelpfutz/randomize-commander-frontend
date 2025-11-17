@@ -10,8 +10,8 @@ export class CommanderService {
 
   constructor(private http: HttpClient) {}
 
-  // Exemplo de uso da variável de ambiente
   getCommanders() {
-    return this.http.get(`${this.apiUrl}/commanders`);
+    // console.log(this.apiUrl);
+    return this.http.get(`${this.apiUrl}/commander`);
   }
 }
